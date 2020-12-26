@@ -77,8 +77,4 @@ public class WuLineDrawer implements LineDrawer {
 
     }
 
-    @Override
-    public void setColor(Color color) {
-
-    }
 }

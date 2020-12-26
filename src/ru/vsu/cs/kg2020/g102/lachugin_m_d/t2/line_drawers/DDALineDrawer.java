@@ -67,10 +67,6 @@ public class DDALineDrawer implements LineDrawer {
         }
     }
 
-    @Override
-    public void setColor(Color color) {
-
-    }
 
 
 }
