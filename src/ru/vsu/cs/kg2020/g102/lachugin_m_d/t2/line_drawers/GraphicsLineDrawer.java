@@ -19,4 +19,14 @@ public class GraphicsLineDrawer implements LineDrawer {
     public void setColor(Color color) {
         g.setColor(color);
     }
+
+    @Override
+    public void setDefColorX(Color defColorX) {
+        g.setColor(defColorX);
+    }
+
+    @Override
+    public void setDefColorY(Color defColorY) {
+        setDefColorX(defColorY);
+    }
 }

@@ -6,6 +6,24 @@ import java.awt.*;
 
 public class DDALineDrawer implements LineDrawer {
     private PixelDrawer pd;
+    private Color DefColorX = Color.red;
+    private Color DefColorY = Color.blue;
+
+    public void setDefColorX(Color defColorX) {
+        DefColorX = defColorX;
+    }
+
+    public void setDefColorY(Color defColorY) {
+        DefColorY = defColorY;
+    }
+
+    public Color getDefColorX() {
+        return DefColorX;
+    }
+
+    public Color getDefColorY() {
+        return DefColorY;
+    }
 
     public DDALineDrawer(PixelDrawer pd) {
         this.pd = pd;
@@ -28,7 +46,7 @@ public class DDALineDrawer implements LineDrawer {
             }
             for (int j = x1; j <= x2; j++) {
                 double i = k * (j - x1) + y1;
-                pd.drawPixel(j, (int) i, Color.red);
+                pd.drawPixel(j, (int) i, getDefColorX());
             }
 
         } else {
@@ -44,7 +62,7 @@ public class DDALineDrawer implements LineDrawer {
             double k = dx / dy;
             for (int i = y1; i <= y2; i++) {
                 double j = (i - y1) * k + x1;
-                pd.drawPixel((int) j, i, Color.blue);
+                pd.drawPixel((int) j, i, getDefColorY());
             }
         }
     }

@@ -7,6 +7,26 @@ import java.awt.*;
 public class BresenhamLineDrawer implements LineDrawer {
 
     private PixelDrawer pd;
+    private Color DefColorX = Color.red;
+    private Color DefColorY = Color.blue;
+
+    public void setDefColorX(Color defColorX) {
+        DefColorX = defColorX;
+    }
+
+    public void setDefColorY(Color defColorY) {
+        DefColorY = defColorY;
+    }
+
+    public Color getDefColorX() {
+        return DefColorX;
+    }
+
+    public Color getDefColorY() {
+        return DefColorY;
+    }
+
+
 
     public BresenhamLineDrawer(PixelDrawer pd) {
         this.pd = pd;
@@ -40,7 +60,7 @@ public class BresenhamLineDrawer implements LineDrawer {
             int e = 2 * Dy - Dx;
 
             for (int i = 1; i <= Dx; i++) {
-                pd.drawPixel(x, y, Color.RED);
+                pd.drawPixel(x, y, getDefColorX());
                 if (e >= 0) {
                     y += n;
                     e -= 2 * Dx - 2 * DDy;
@@ -67,7 +87,7 @@ public class BresenhamLineDrawer implements LineDrawer {
             int e = 2 * Dx - Dy;
 
             for (int i = 1; i <= Dy; i++) {
-                pd.drawPixel(x, y, Color.BLUE);
+                pd.drawPixel(x, y, getDefColorY());
                 if (e >= 0) {
                     x += n;
                     e += 2 * DDx - 2 * Dy;
