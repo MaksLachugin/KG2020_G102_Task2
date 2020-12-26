@@ -95,6 +95,7 @@ public class DrawPanel extends JPanel implements MouseMotionListener, KeyListene
                 Rectangle screenRect = new Rectangle(getX(), getY(), getWidth(), getHeight());
                 BufferedImage capture = new Robot().createScreenCapture(screenRect);
                 ImageIO.write(capture, "bmp", new File("scr.bmp"));
+                System.out.println("Улыбочку");
             } catch (Exception exception) {
                 System.out.println(exception);
             }
